@@ -55,13 +55,13 @@ end
    it'passwordが半角数字のみでは登録できない' do
    @user.password = '111111'
    @user.valid?
-   expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+   expect(@user.errors.full_messages).to include("Password には英字と数字の両方を含めて設定してください")
    end
 
     it 'passwordが全角では登録できない' do
       @user.password = 'ああああ１１１１１'
       @user.valid?
-      expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      expect(@user.errors.full_messages).to include("Password には英字と数字の両方を含めて設定してください")
     end
 
 
