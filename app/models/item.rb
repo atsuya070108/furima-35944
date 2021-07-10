@@ -7,4 +7,6 @@ class Item < ApplicationRecord
   belongs_to :delivery
   belongs_to :days_delivery
   has_one_attached :image
+
+  validates :category_id, :status_id, :burden_id, :delivery_id, :days_delivery_id, :image, :price, :product_name, presence: true
 end
